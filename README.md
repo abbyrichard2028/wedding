@@ -9,6 +9,7 @@ read from this repo without the password. Guests enter the password from their i
 ## Files
 - `index.html`: the locked site that GitHub Pages serves.
 - `tools/lock.mjs`: locks and unlocks the site (Node 18+).
+- `tools/rsvp-apps-script.gs`: receives RSVPs into the Google Sheet.
 - `site.html`: the readable source. **Git-ignored: never commit it.**
 
 ## Editing the site
@@ -21,7 +22,12 @@ git add index.html && git commit -m "Update site" && git push
 
 ## Before sharing
 - Replace every `[bracketed placeholder]` (date, times, hotel blocks, RSVP deadline, story, photos, email).
-- The RSVP form does not send replies anywhere yet. Connect it to a form service first.
+
+## RSVPs
+Replies are saved to the "Wedding RSVPs" Google Sheet (Drive › 01 Master Docs) by a small
+Google Apps Script web app: `tools/rsvp-apps-script.gs`. Its `/exec` URL is set as
+`RSVP_ENDPOINT` inside the locked site, so it is only visible to guests with the password.
+Until it is set, the form tells guests that RSVPs aren't open yet.
 
 ## Publish with GitHub Pages
 Settings → Pages → Deploy from a branch → `main`, folder `/ (root)`.
