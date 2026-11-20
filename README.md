@@ -27,7 +27,8 @@ git add index.html && git commit -m "Update site" && git push
 Replies are saved to the "Wedding RSVPs" Google Sheet (Drive › 01 Master Docs) by a small
 Google Apps Script web app: `tools/rsvp-apps-script.gs`. Its `/exec` URL is set as
 `RSVP_ENDPOINT` inside the locked site, so it is only visible to guests with the password.
-Until it is set, the form tells guests that RSVPs aren't open yet.
+Only names on the Guest List (MASTER LIST tab, Tiers 1–3) are accepted; replies are also
+written back to the Guest List's RSVP Status, RSVP Date, Meal Choice and Dietary Restrictions columns.
 
 ## Publish with GitHub Pages
 Settings → Pages → Deploy from a branch → `main`, folder `/ (root)`.
